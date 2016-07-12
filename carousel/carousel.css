@@ -1,0 +1,19 @@
+
+#image-div {
+    width: 90vw;
+    margin:auto;
+    display:flex;
+    flex-wrap: wrap;
+    flex-flow: row;
+}
+h3{
+    font-size: 1.25em;
+}
+.image-figure {
+    width: 25vw;
+    margin: auto;
+}
+.carousel-img {
+    width: 100%;
+    max-height:17vh;
+}
