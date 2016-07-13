@@ -13,6 +13,23 @@ var carouselFunctions = {
             $("#image-div").append(figure);
             $("#"+carImg.figure.id).append(title+image+caption);
         }
+    },
+    moveCarousel:function(){
+        $("#left-button").click(function(){
+            var firstArrayElement = carouselImages.image.shift();
+            carouselImages.image.push(firstArrayElement);
+            /*console.log(carouselImages.image);*/
+            $("#image-div").children().remove();
+            carouselFunctions.addImages();
+        });
+        $("#right-button").click(function(){
+            var firstArrayElement = carouselImages.image.pop();
+            carouselImages.image.unshift(firstArrayElement);
+            /*console.log(carouselImages.image);*/
+            $("#image-div").children().remove();
+            carouselFunctions.addImages();
+        });
     }
 };
 carouselFunctions.addImages();
+carouselFunctions.moveCarousel();
