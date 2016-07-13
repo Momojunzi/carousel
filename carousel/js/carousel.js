@@ -3,7 +3,20 @@
  */
 var carouselFunctions = {
     addImages: function(){
-        for(img in carouselImages.image){
+        var displayArray = carouselImages.image.slice(0, 5);
+        for(img in displayArray) {
+            var carImg = displayArray[img];
+            var figure = "<figure class = '" + carImg.figure.class + "' id = '" + carImg.figure.id + "'></figure>";
+            var title = "<h3 class='" + carImg.h3.class + "' id='" + carImg.h3.id + "'>" + carImg.h3.title + "</h3>";
+            var image = "<img src='" + carImg.img.src + "' class='" + carImg.img.class + "' id='" + carImg.img.id + "'/>";
+            var caption = "<figcaption class='" + carImg.figcaption.class + "' id='" + carImg.figcaption.id + "'>" + carImg.figcaption.caption + "</figcaption>";
+            console.log(carImg.img.src);
+            $("#image-div").append(figure);
+            $("#" + carImg.figure.id).append(title + image + caption);
+        }
+        console.log(displayArray);
+
+        /*for(img in carouselImages.image){
             var carImg = carouselImages.image[img];
             var figure = "<figure class = '" + carImg.figure.class + "' id = '" + carImg.figure.id + "'></figure>";
             var title ="<h3 class='" + carImg.h3.class + "' id='" + carImg.h3.id +"'>"+carImg.h3.title+"</h3>";
@@ -12,7 +25,7 @@ var carouselFunctions = {
             console.log(carImg.img.src);
             $("#image-div").append(figure);
             $("#"+carImg.figure.id).append(title+image+caption);
-        }
+        }*/
     },
     moveCarousel:function(){
         $("#left-button").click(function(){
